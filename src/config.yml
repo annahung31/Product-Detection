@@ -1,0 +1,44 @@
+PATHS:
+  RAW_DATA: '/home/annahung/189nas/Wotcha/dataset/shopee'                                       
+  PROCESSED_DATA: '/home/annahung/189nas/Wotcha/dataset/shopee_processed/'
+  #PROCESSED_DATA: '/home/annahung/189nas/Wotcha/dataset/smallSet'
+  TRAIN_SET: '/home/annahung/189nas/Wotcha/dataset/shopee_processed/train_set.csv'
+  VAL_SET: '/home/annahung/189nas/Wotcha/dataset/shopee_processed/val_set.csv'
+  TEST_SET: '/home/annahung/189nas/Wotcha/dataset/shopee_processed/test_set.csv'
+
+  RESULT: '/home/annahung/189nas/Wotcha/ANNA/results'
+  MODEL_TO_LOAD: '/home/annahung/189nas/Wotcha/ANNA/results/20200701-163629'
+  BATCH_PRED_IMGS: '/home/annahung/189nas/Wotcha/dataset/shopee/test'
+  BATCH_PREDS: '/home/annahung/189nas/Wotcha/results/predictions/'
+
+DATA:
+  IMG_DIM: [224, 224]
+  VAL_SPLIT: 0.1
+  NUM_CLASSES: 42          
+
+TRAIN:
+                                
+  MODEL_DEF: 'resnet152'         
+  CONTINUE_MODEL: '/home/annahung/189nas/Wotcha/ANNA/results/20200701-172611/model_best.pth.tar'                       
+  #CONTINUE_MODEL: None
+  PRINT_PREQ: 60
+  #CLASS_MULTIPLIER: [0.4, 1.0, 0.4]                      # Class multiplier for multiclass classification (3 classes)
+  BATCH_SIZE: 16
+  EPOCHS: 50
+  THRESHOLDS: 0.5                                         # Can be changed to list of values in range [0, 1]
+  PATIENCE: 7
+  IMB_STRATEGY: 'random_oversample'                            # One of {'class_weight', 'random_oversample'}
+  METRIC_PREFERENCE: ['auc', 'recall', 'precision', 'loss']
+  NUM_RUNS: 10
+  GPU: '1'
+
+NN:
+  RESNET152:
+    EMB_DIM: 2048
+    LR: 0.0002
+    OPTIMIZER: 'adam'
+
+
+
+PREDICTION:
+  THRESHOLD: 0
