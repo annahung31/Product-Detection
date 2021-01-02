@@ -1,5 +1,5 @@
 # Introduction
-These is a try on SHOPEE 2020 Shopee Code League: [Product Detection](https://www.kaggle.com/c/shopee-product-detection-open/overview)
+This is a try on SHOPEE 2020 Shopee Code League: [Product Detection](https://www.kaggle.com/c/shopee-product-detection-open/overview)
 
 * Model: 
 A pre-trained [RESNET152](https://pytorch.org/docs/stable/_modules/torchvision/models/resnet.html#resnet152) is used to extract features, and a fully-connected network is then added to do the classification. See [model.py](./src/models/model.py) for more details.
@@ -11,7 +11,9 @@ A pre-trained [RESNET152](https://pytorch.org/docs/stable/_modules/torchvision/m
 
 
 # Result
-Top 1 score: 0.77434
+Top 1 score: 0.77434  
+Got 222/604 teams on public LeaderBoard  
+![](wocha.png)
 
 # Usage
 
